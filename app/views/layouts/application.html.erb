@@ -8,27 +8,9 @@
 		<%= csrf_meta_tags %>
 	</head>
 	<body>
-		<header>
-			<nav class="be-red white large-padding">
-				<ul class="no-list row center-xs middle-xs">
-					<li class="col-xs">
-						<h1 class="no-margin" id="logo">Blog GVS</h1>
-					</li>
-					<li class="col-xs">
-						<%= link_to "Inicio", root_path %>
-					</li>
-					<li class="col-xs">
-						Diseño
-					</li>
-					<li class="col-xs">
-						Programación
-					</li>
-					<li class="col-xs">
-						Tecnología
-					</li>
-				</ul>
-			</nav>
-		</header>
+		<%= render "partials/navigation" %>		
+		<p class="notice"><%= notice %></p>
+       	<p class="alert"><%= alert %></p>
 		<%= yield %>
 	</body>
 </html>

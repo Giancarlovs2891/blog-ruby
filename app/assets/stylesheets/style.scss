@@ -18,6 +18,7 @@ a,a:visited{
 }
 #logo{
 	font-size: 1.2em;
+	text-shadow: 1px 1px #A3372C;
 }
 .no-margin{
 	margin:0;
@@ -37,11 +38,11 @@ a,a:visited{
 .large-padding{
 	padding: 8px 7px;
 }
-.top-space{
+.field,.top-space,.actions{
 	margin-top: 1em;
 }
-.field{
-	margin-top: 1em;
+.text-left{
+	text-align: left;
 }
 .form-control{
 	border: none;
