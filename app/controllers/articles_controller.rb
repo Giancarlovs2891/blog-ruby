@@ -14,6 +14,11 @@ class ArticlesController < ApplicationController
 		@article = Article.new
 	end
 
+	#GET /articles/:id/edit
+	def edit
+		@article = Article.find(params[:id])
+	end
+
 	#POST /articles
 	def create
 		@article = Article.new(article_params)
@@ -27,7 +32,12 @@ class ArticlesController < ApplicationController
 
 	#PUT /articles/:id
 	def update
-		
+		@article = Article.find(params[:id])
+		if @article.update(article_params)
+			redirect_to @article
+		else
+			render :edit
+		end
 	end
 
 	#DELETE /articles/:id
@@ -38,9 +48,9 @@ class ArticlesController < ApplicationController
 	end
 
 	private
-		def article_params
-			params.require(:article).permit(:title, :body)
-		end
-	
+
+	def article_params
+		params.require(:article).permit(:title, :body)
+	end	
 
 end
