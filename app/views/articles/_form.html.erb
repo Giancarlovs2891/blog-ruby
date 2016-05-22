@@ -1,5 +1,5 @@
-<% name ||= "Crear" %>
-<h1><%= name %> artículo</h1>
+<% name ||= "New" %>
+<h1><%= name %> article</h1>
 <%= form_for(@article) do |f| %>
 	<% @article.errors.full_messages.each do |message| %>
 		<div class="be-red white top-space">
@@ -7,12 +7,12 @@
 		</div>			
 	<% end %>
 	<div class="field">
-		<%= f.text_field :title, placeholder: "Titulo", class: "form-control" %>
+		<%= f.text_field :title, placeholder: "Title", class: "form-control" %>
 	</div>
 	<div class="field">
-		<%= f.text_area :body, placeholder: "Escribe aquí el artículo", style: "height:250px;", class: "form-control" %>	
+		<%= f.text_area :body, placeholder: "Write the content here", style: "height:250px;", class: "form-control" %>	
 	</div>
 	<div class="field">
-		<%= f.submit "Guardar", class: "btn be-red white" %>
+		<%= f.submit "Save", class: "btn be-red white" %>
 	</div>
 <% end %>	
