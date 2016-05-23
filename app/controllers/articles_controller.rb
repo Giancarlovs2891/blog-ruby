@@ -10,6 +10,7 @@ class ArticlesController < ApplicationController
 	#GET /articles/:id
 	def show
 		@article.update_visits_count
+		@comment = Comment.new
 	end
 
 	#GET /articles/new
@@ -48,13 +49,12 @@ class ArticlesController < ApplicationController
 	end
 
 	private
+		def set_article
+			@article = Article.find(params[:id])
+		end
 
-	def set_article
-		@article = Article.find(params[:id])
-	end
-
-	def article_params
-		params.require(:article).permit(:title, :body)
-	end	
+		def article_params
+			params.require(:article).permit(:title, :body)
+		end	
 
 end
