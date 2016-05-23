@@ -1,7 +1,11 @@
 class CommentsController < ApplicationController
-    before_action :set_comment, only: [:update, :destroy]
+    before_action :set_comment, only: [:update, :destroy, :show]
     before_action :set_article
     before_action :authenticate_user! #, except: [:show, :index]
+
+    def show
+        
+    end
 
     def create
         @comment = current_user.comments.new(comment_params)
@@ -27,8 +31,6 @@ class CommentsController < ApplicationController
                 format.json { render json: @comment.errors, status: :unprocessable_entity }
             end
         end
-        
-        respond_with(@article)
     end
 
     def destroy
