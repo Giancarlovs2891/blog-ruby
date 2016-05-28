@@ -33,6 +33,9 @@ gem 'devise'
 # jQuery tool
 gem 'jquery-turbolinks'
 
+# Uploads files
+gem 'paperclip'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false

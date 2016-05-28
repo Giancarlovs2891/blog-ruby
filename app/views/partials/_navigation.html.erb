@@ -5,9 +5,9 @@
 				<h1 class="no-margin" id="logo"><%= link_to "Blog GVS", root_path %></h1>
 			</li>
 			<li class="col-xs">
-				<%= link_to "Home", root_path %>
+				<%= link_to "Articles", articles_path %>
 			</li>
-			<li class="col-xs">
+			<!-- <li class="col-xs">
 				Design
 			</li>
 			<li class="col-xs">
@@ -15,7 +15,12 @@
 			</li>
 			<li class="col-xs">
 				Tech
-			</li>
+			</li> -->
+			<% @categories.each do |category| %>
+				<li class="col-xs">
+					<%= link_to category.name, category %>
+				</li>
+			<% end %>
 			<% if user_signed_in? %>
 				<li class="col-xs">
 					<%= link_to "Sign out", destroy_user_session_path, method: :delete %>
