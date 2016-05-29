@@ -1,4 +1,25 @@
-<h1><%= @article.title %></h1>
+<article class="bottom-space">
+	<div class="row center-xs">
+		<div class="col-xs-12 ligth-border col-md-7">
+			<h1 class="be-big blue"><%= @article.title %></h1>
+			<p class="text-right be-small">
+				<%= link_to "Back", articles_path, class: "underline" %>
+				<span class="red"><%= @article.visits_count %> visit(s)</span>
+				<% unless @article.user.nil? %>
+					- Written by: <%= @article.user.email %>
+				<% end %>
+			</p>
+			<div class="text-justify">
+				<%= Sanitize.fragment(@article.body, Sanitize::Config::RELAXED).html_safe %>
+			</div>
+			<div class="top-space"> 
+				<%= render "articles/comments" %>
+			</div>
+		</div>				
+	</div>
+</article>
+
+<!-- <h1><%= @article.title %></h1>
 <% unless @article.user.nil? %>
 	<p>
 		Written by: <%= @article.user.email %>
@@ -32,4 +53,4 @@
 </div>
 <div>
 	<%= link_to "Edit", edit_article_path(@article) %>
-</div>
+</div> -->
