@@ -48,6 +48,9 @@ gem 'epic-editor-rails'
 # HTML safe 
 gem 'sanitize'
 
+group :development, :test do
+	gem 'letter_opener'
+end
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
