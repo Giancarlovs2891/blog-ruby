@@ -45,6 +45,9 @@ gem	'will_paginate'
 # Markdown editor
 gem 'epic-editor-rails'
 
+# HTML safe 
+gem 'sanitize'
+
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
