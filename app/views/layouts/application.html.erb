@@ -2,15 +2,19 @@
 <html>
 	<head>
 		<title>Blog</title>
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no", maximum-scale="1.0">
 		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
 		<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
 		<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 		<%= csrf_meta_tags %>
 	</head>
-	<body>
+	<body>		
 		<%= render "partials/navigation" %>		
 		<p class="notice"><%= notice %></p>
        	<p class="alert"><%= alert %></p>
-		<%= yield %>
+       	<div class="container">	
+			<%= yield %>
+		</div>
 	</body>
 </html>

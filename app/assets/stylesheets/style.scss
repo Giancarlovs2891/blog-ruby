@@ -44,8 +44,24 @@ a,a:visited{
 .field,.top-space,.actions{
 	margin-top: 1em;
 }
+.background-color{
+	background-position: center;
+	background-size: cover;
+}
 .text-left{
 	text-align: left;
+}
+.text-center{
+	text-align: center;
+}
+.article-height{
+	height: 150px;
+}
+.relative{
+	position: relative;
+}
+.absolute{
+	position: absolute;
 }
 .form-control{
 	border: none;
